@@ -180,7 +180,7 @@ lib_src_files = [
 //-----------------------------------------------------------------------
 // jemalloc static library
 //-----------------------------------------------------------------------
-cc_library {
+cc_library_static {
     name: "libjemalloc5",
     ramdisk_available: true,
     vendor_ramdisk_available: true,
@@ -194,9 +194,6 @@ cc_library {
 
     target: {
         android: {
-            shared: {
-                enabled: false,
-            },
             system_shared_libs: [],
             header_libs: ["libc_headers"],
         },
